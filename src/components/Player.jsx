@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Player = ({ initialName, symbol }) => {
+const Player = ({ initialName, symbol, isActive }) => {
   const [name, setName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -21,7 +21,7 @@ const Player = ({ initialName, symbol }) => {
   }
 
   return (
-    <li>
+    <li className={isActive ? "active" : undefined}>
       <span id="player">
         {playerName}
         <span className="player-symbol">{symbol}</span>
